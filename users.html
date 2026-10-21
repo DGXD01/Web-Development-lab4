@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profiles</title>
+</head>
+
+<body>
+    <h1>User Profiles</h1>
+
+    <div id="userList"></div>
+
+    <script>
+        fetch("userProfiles.json")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Fetch error: " + response.status);
+                }
+
+                return response.json();
+            })
+            .then(users => {
+                let output = "";
+
+                for (let i = 0; i < users.length; i++) {
+                    const user = users[i];
+
+                    output += `
+                        <div>
+                            <h2>${user.firstName} ${user.lastName}</h2>
+                            <p>Email: ${user.email}</p>
+                            <p>Date of Birth: ${user.dateOfBirth}</p>
+
+                            <h3>Address</h3>
+                            <p>Street: ${user.address.street}</p>
+                            <p>City: ${user.address.city}</p>
+                            <p>State: ${user.address.state}</p>
+                            <p>Zip Code: ${user.address.zipCode}</p>
+
+                            <h3>Preferences</h3>
+                            <p>Theme: ${user.preferences.theme}</p>
+                            <p>Language: ${user.preferences.language}</p>
+                            <p>Notifications: ${user.preferences.notifications}</p>
+                            <p>Subscription: ${user.preferences.subscription}</p>
+                        </div>
+                    `;
+                }
+
+                document.getElementById("userList").innerHTML = output;
+            })
+            .catch(error => {
+                console.error("Fetch error: " + error.message);
+            });
+    </script>
+</body>
+
+</html>

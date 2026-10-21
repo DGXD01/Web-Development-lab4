@@ -1,0 +1,56 @@
+[
+    {
+        "firstName": "one1",
+        "lastName": "one2",
+        "email": "one1@example.com",
+        "dateOfBirth": "2000-01-01",
+        "address": {
+            "street": "one1",
+            "city": "one1",
+            "state": "one1",
+            "zipCode": "0001"
+        },
+        "preferences": {
+            "theme": "light",
+            "language": "English",
+            "notifications": true,
+            "subscription": true
+        }
+    },
+    {
+        "firstName": "one3",
+        "lastName": "one4",
+        "email": "one2@example.com",
+        "dateOfBirth": "2000-01-02",
+        "address": {
+            "street": "one2",
+            "city": "one2",
+            "state": "one2",
+            "zipCode": "0002"
+        },
+        "preferences": {
+            "theme": "dark",
+            "language": "Chinese",
+            "notifications": false,
+            "subscription": false
+        }
+    },
+    {
+        "firstName": "one5",
+        "lastName": "one6",
+        "email": "one3@example.com",
+        "dateOfBirth": "2000-01-03",
+        "address": {
+            "street": "one3",
+            "city": "one3",
+            "state": "one3",
+            "zipCode": "0003"
+        },
+        "preferences": {
+            "theme": "light",
+            "language": "French",
+            "notifications": true,
+            "subscription": false
+        }
+    }
+]
